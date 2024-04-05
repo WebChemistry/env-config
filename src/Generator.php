@@ -58,13 +58,17 @@ final class Generator
 		$env = getenv();
 
 		foreach ($this->parseInput($input) as $target => $source) {
-			if (!isset($env[$source])) {
+			if (str_starts_with($source, '"') && str_ends_with($source, '"')) {
+				$source = substr($source, 1, -1);
+			} else if (!isset($env[$source])) {
 				echo "Env $source not found.\n";
 
 				exit(1);
+			} else {
+				$source = $env[$source];
 			}
 
-			$records[] = [$target, $env[$source]];
+			$records[] = [$target, $source];
 		}
 
 		$content = (new $adapterClass)->generate($records);

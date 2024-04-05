@@ -1,2 +1,0 @@
-app.value=HOME
-app=HOME
