@@ -10,7 +10,7 @@ if (php_sapi_name() !== 'cli') {
 $root = __DIR__;
 
 if (!is_file($root . '/vendor/autoload.php')) {
-	$root = dirname(__DIR__, 4);
+	$root = dirname(__DIR__, 3);
 }
 
 require $root . '/vendor/autoload.php';
