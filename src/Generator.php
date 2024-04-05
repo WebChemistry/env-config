@@ -59,7 +59,7 @@ final class Generator
 
 		foreach ($this->parseInput($input) as $target => $source) {
 			if (!isset($env[$source])) {
-				echo "Env $source not found in.\n";
+				echo "Env $source not found.\n";
 
 				exit(1);
 			}
