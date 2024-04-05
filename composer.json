@@ -1,0 +1,22 @@
+{
+    "name": "webchemistry/env-config",
+    "require": {
+        "php": ">= 8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "WebChemistry\\EnvConfig\\": "src"
+        }
+    },
+    "bin": ["env-config"],
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "pestphp/pest": "^2.34",
+        "nette/neon": "^3.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

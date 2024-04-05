@@ -1,0 +1,18 @@
+#!/usr/bin/php
+<?php declare(strict_types = 1);
+
+if (php_sapi_name() !== 'cli') {
+	echo 'This script can be run only in CLI mode.';
+
+	exit(1);
+}
+
+$root = __DIR__;
+
+if (!is_file($root . '/vendor/autoload.php')) {
+	$root = dirname(__DIR__, 4);
+}
+
+require $root . '/vendor/autoload.php';
+
+(new \WebChemistry\EnvConfig\Generator())->generate($argv);
